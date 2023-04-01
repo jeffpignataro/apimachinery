@@ -1,0 +1,44 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "serializer",
+    srcs = [
+        "codec_factory.go",
+        "negotiated_codec.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/runtime/serializer",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/protobuf:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/recognizer:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/versioning:go_default_library",
+    ],
+)
+
+go_test(
+    name = "serializer_test",
+    srcs = [
+        "codec_test.go",
+        "encoder_with_allocator_test.go",
+        "sparse_test.go",
+    ],
+    embed = [":serializer"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/apis/testapigroup/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@com_github_google_gofuzz//:gofuzz",
+        "@com_github_spf13_pflag//:pflag",
+        "@io_k8s_apimachinery//pkg/api/equality:go_default_library",
+        "@io_k8s_apimachinery//pkg/conversion:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/protobuf:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/testing:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/diff:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)

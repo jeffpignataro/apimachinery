@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "runtime",
+    srcs = ["runtime.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/runtime",
+    visibility = ["//visibility:public"],
+    deps = ["@io_k8s_klog_v2//:klog"],
+)
+
+go_test(
+    name = "runtime_test",
+    srcs = ["runtime_test.go"],
+    embed = [":runtime"],
+)

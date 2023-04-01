@@ -1,0 +1,35 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "roundtrip",
+    srcs = [
+        "compatibility.go",
+        "construct.go",
+        "fuzz_norace.go",
+        "fuzz_race.go",
+        "roundtrip.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/apitesting/roundtrip",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "//pkg/util/intstr:intstr_go_proto",
+        "@com_github_davecgh_go_spew//spew",
+        "@com_github_golang_protobuf//proto:go_default_library",
+        "@com_github_google_go_cmp//cmp",
+        "@com_github_google_gofuzz//:gofuzz",
+        "@com_github_spf13_pflag//:pflag",
+        "@io_k8s_apimachinery//pkg/api/apitesting:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/apitesting/fuzzer:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/equality:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/fuzzer:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/protobuf:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/diff:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+    ],
+)

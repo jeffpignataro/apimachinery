@@ -1,0 +1,29 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "errors",
+    srcs = [
+        "doc.go",
+        "errors.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/errors",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/util/validation/field:go_default_library",
+    ],
+)
+
+go_test(
+    name = "errors_test",
+    srcs = ["errors_test.go"],
+    embed = [":errors"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/util/validation/field:go_default_library",
+    ],
+)

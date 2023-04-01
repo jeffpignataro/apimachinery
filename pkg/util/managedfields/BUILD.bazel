@@ -1,0 +1,53 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "managedfields",
+    srcs = [
+        "extract.go",
+        "fieldmanager.go",
+        "gvkparser.go",
+        "scalehandler.go",
+        "typeconverter.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/managedfields",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/unstructured:go_default_library",
+        "@io_k8s_kube_openapi//pkg/schemaconv",
+        "@io_k8s_kube_openapi//pkg/util/proto",
+        "@io_k8s_kube_openapi//pkg/validation/spec",
+        "@io_k8s_sigs_structured_merge_diff_v4//fieldpath",
+        "@io_k8s_sigs_structured_merge_diff_v4//schema",
+        "@io_k8s_sigs_structured_merge_diff_v4//typed",
+    ],
+)
+
+go_test(
+    name = "managedfields_test",
+    srcs = [
+        "extract_test.go",
+        "fieldmanager_test.go",
+        "scalehandler_test.go",
+    ],
+    embed = [":managedfields"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@com_github_google_go_cmp//cmp",
+        "@io_k8s_apimachinery//pkg/api/equality:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/errors:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/unstructured:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/managedfields:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/yaml:go_default_library",
+        "@io_k8s_kube_openapi//pkg/validation/spec",
+        "@io_k8s_sigs_structured_merge_diff_v4//fieldpath",
+        "@io_k8s_sigs_structured_merge_diff_v4//typed",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)

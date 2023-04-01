@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "naming",
+    srcs = ["from_stack.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/naming",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "naming_test",
+    srcs = ["from_stack_test.go"],
+    embed = [":naming"],
+)

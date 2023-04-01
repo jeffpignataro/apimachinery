@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "unstructuredscheme",
+    srcs = ["scheme.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured/unstructuredscheme",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/unstructured:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/versioning:go_default_library",
+    ],
+)

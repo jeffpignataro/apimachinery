@@ -1,0 +1,28 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "sets",
+    srcs = [
+        "byte.go",
+        "doc.go",
+        "empty.go",
+        "int.go",
+        "int32.go",
+        "int64.go",
+        "ordered.go",
+        "set.go",
+        "string.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/sets",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "sets_test",
+    srcs = [
+        "set_generic_test.go",
+        "set_test.go",
+    ],
+    embed = [":sets"],
+    deps = ["@io_k8s_apimachinery//pkg/util/sets:go_default_library"],
+)

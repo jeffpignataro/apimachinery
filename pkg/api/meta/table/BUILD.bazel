@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "table",
+    srcs = ["table.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/meta/table",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/duration:go_default_library",
+    ],
+)

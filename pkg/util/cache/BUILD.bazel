@@ -1,0 +1,26 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "cache",
+    srcs = [
+        "expiring.go",
+        "lruexpirecache.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/cache",
+    visibility = ["//visibility:public"],
+    deps = ["@io_k8s_utils//clock"],
+)
+
+go_test(
+    name = "cache_test",
+    srcs = [
+        "expiring_test.go",
+        "lruexpirecache_test.go",
+    ],
+    embed = [":cache"],
+    deps = [
+        "@com_github_google_go_cmp//cmp",
+        "@com_github_google_uuid//:uuid",
+        "@io_k8s_utils//clock/testing",
+    ],
+)

@@ -1,0 +1,87 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+
+proto_library(
+    name = "runtime_proto",
+    srcs = ["generated.proto"],
+    visibility = ["//visibility:public"],
+)
+
+go_proto_library(
+    name = "runtime_go_proto",
+    importpath = "k8s.io/apimachinery/pkg/runtime",
+    proto = ":runtime_proto",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "runtime",
+    srcs = [
+        "allocator.go",
+        "codec.go",
+        "codec_check.go",
+        "conversion.go",
+        "converter.go",
+        "doc.go",
+        "embedded.go",
+        "error.go",
+        "extension.go",
+        "helper.go",
+        "interfaces.go",
+        "mapper.go",
+        "negotiate.go",
+        "register.go",
+        "scheme.go",
+        "scheme_builder.go",
+        "swagger_doc_generator.go",
+        "types.go",
+        "types_proto.go",
+        "zz_generated.deepcopy.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/runtime",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/conversion:go_default_library",
+        "@io_k8s_apimachinery//pkg/conversion/queryparams:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/errors:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/naming:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+        "@io_k8s_klog_v2//:klog",
+        "@io_k8s_sigs_structured_merge_diff_v4//value",
+    ],
+)
+
+go_test(
+    name = "runtime_test",
+    srcs = [
+        "allocator_test.go",
+        "codec_test.go",
+        "converter_test.go",
+        "embedded_test.go",
+        "extension_test.go",
+        "local_scheme_test.go",
+        "mapper_test.go",
+        "scheme_test.go",
+        "swagger_doc_generator_test.go",
+    ],
+    embed = [":runtime"],
+    deps = [
+        ":runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@com_github_google_gofuzz//:gofuzz",
+        "@com_github_stretchr_testify//assert",
+        "@com_github_stretchr_testify//require",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/unstructured:go_default_library",
+        "@io_k8s_apimachinery//pkg/conversion:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/testing:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/diff:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
+    ],
+)

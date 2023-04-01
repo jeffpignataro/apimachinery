@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "install",
+    srcs = ["install.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/apis/testapigroup/install",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/testapigroup/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "@io_k8s_apimachinery//pkg/apis/testapigroup:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
+    ],
+)
+
+go_test(
+    name = "install_test",
+    srcs = ["roundtrip_test.go"],
+    embed = [":install"],
+    deps = [
+        "@io_k8s_apimachinery//pkg/api/apitesting/roundtrip:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/testapigroup/fuzzer:go_default_library",
+    ],
+)

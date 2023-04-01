@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "testrestmapper",
+    srcs = ["test_restmapper.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/meta/testrestmapper",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+    ],
+)

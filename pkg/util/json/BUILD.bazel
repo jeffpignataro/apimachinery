@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "json",
+    srcs = ["json.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/json",
+    visibility = ["//visibility:public"],
+    deps = ["@io_k8s_sigs_json//:json"],
+)
+
+go_test(
+    name = "json_test",
+    srcs = ["json_test.go"],
+    embed = [":json"],
+)

@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/jeffpignataro/apimachinery
+gazelle(name = "gazelle")
+
+go_library(
+    name = "apimachinery",
+    srcs = ["doc.go"],
+    importpath = "github.com/jeffpignataro/apimachinery",
+    visibility = ["//visibility:public"],
+)

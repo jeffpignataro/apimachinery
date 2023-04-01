@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "mergepatch",
+    srcs = [
+        "errors.go",
+        "util.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/mergepatch",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_davecgh_go_spew//spew",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)
+
+go_test(
+    name = "mergepatch_test",
+    srcs = ["util_test.go"],
+    embed = [":mergepatch"],
+)

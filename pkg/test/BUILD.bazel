@@ -1,0 +1,51 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "test",
+    srcs = [
+        "util.go",
+        "zz_generated.deepcopy.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/test",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/apis/testapigroup/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/apis/testapigroup:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
+    ],
+)
+
+go_test(
+    name = "test_test",
+    srcs = [
+        "api_meta_help_test.go",
+        "api_meta_meta_test.go",
+        "apis_meta_v1_unstructed_unstructure_test.go",
+        "runtime_helper_test.go",
+        "runtime_serializer_protobuf_protobuf_test.go",
+        "runtime_unversioned_test.go",
+    ],
+    embed = [":test"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/apis/testapigroup/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@com_github_google_gofuzz//:gofuzz",
+        "@com_github_stretchr_testify//require",
+        "@io_k8s_apimachinery//pkg/api/apitesting:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/equality:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/fuzzer:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/unstructured:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/testapigroup:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/protobuf:go_default_library",
+        "@io_k8s_apimachinery//pkg/types:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/diff:go_default_library",
+    ],
+)

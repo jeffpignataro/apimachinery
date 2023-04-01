@@ -1,0 +1,23 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "fields",
+    srcs = [
+        "doc.go",
+        "fields.go",
+        "requirements.go",
+        "selector.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/fields",
+    visibility = ["//visibility:public"],
+    deps = ["@io_k8s_apimachinery//pkg/selection:go_default_library"],
+)
+
+go_test(
+    name = "fields_test",
+    srcs = [
+        "fields_test.go",
+        "selector_test.go",
+    ],
+    embed = [":fields"],
+)

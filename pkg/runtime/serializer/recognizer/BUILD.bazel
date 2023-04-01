@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "recognizer",
+    srcs = ["recognizer.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/recognizer",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+    ],
+)

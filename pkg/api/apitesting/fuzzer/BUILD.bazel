@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "fuzzer",
+    srcs = [
+        "fuzzer.go",
+        "valuefuzz.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/apitesting/fuzzer",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_google_gofuzz//:gofuzz",
+        "@io_k8s_apimachinery//pkg/runtime/serializer:go_default_library",
+    ],
+)
+
+go_test(
+    name = "fuzzer_test",
+    srcs = ["valuefuzz_test.go"],
+    embed = [":fuzzer"],
+)

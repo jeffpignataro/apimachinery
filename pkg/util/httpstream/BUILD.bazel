@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "httpstream",
+    srcs = [
+        "doc.go",
+        "httpstream.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/httpstream",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "httpstream_test",
+    srcs = ["httpstream_test.go"],
+    embed = [":httpstream"],
+)

@@ -1,0 +1,36 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "strategicpatch",
+    srcs = [
+        "errors.go",
+        "meta.go",
+        "patch.go",
+        "types.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/strategicpatch",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/unstructured:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/mergepatch:go_default_library",
+        "@io_k8s_apimachinery//third_party/forked/golang/json:go_default_library",
+        "@io_k8s_kube_openapi//pkg/util/proto",
+    ],
+)
+
+go_test(
+    name = "strategicpatch_test",
+    srcs = ["patch_test.go"],
+    data = glob(["testdata/**"]),
+    embed = [":strategicpatch"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "@com_github_davecgh_go_spew//spew",
+        "@io_k8s_apimachinery//pkg/util/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/mergepatch:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/strategicpatch/testing:go_default_library",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)

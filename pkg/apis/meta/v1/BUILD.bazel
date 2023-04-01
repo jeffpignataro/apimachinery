@@ -1,0 +1,92 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+
+proto_library(
+    name = "v1_proto",
+    srcs = ["generated.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//k8s.io/apimachinery/pkg/runtime:runtime_proto",
+        "//k8s.io/apimachinery/pkg/runtime/schema:schema_proto",
+    ],
+)
+
+go_proto_library(
+    name = "v1_go_proto",
+    importpath = "k8s.io/apimachinery/pkg/apis/meta/v1",
+    proto = ":v1_proto",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "meta",
+    srcs = [
+        "controller_ref.go",
+        "conversion.go",
+        "deepcopy.go",
+        "doc.go",
+        "duration.go",
+        "group_version.go",
+        "helpers.go",
+        "labels.go",
+        "meta.go",
+        "micro_time.go",
+        "micro_time_fuzz.go",
+        "micro_time_proto.go",
+        "register.go",
+        "time.go",
+        "time_fuzz.go",
+        "time_proto.go",
+        "types.go",
+        "types_swagger_doc_generated.go",
+        "watch.go",
+        "zz_generated.conversion.go",
+        "zz_generated.deepcopy.go",
+        "zz_generated.defaults.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/api/resource:resource_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "//pkg/util/intstr:intstr_go_proto",
+        "@com_github_google_gofuzz//:gofuzz",
+        "@io_k8s_apimachinery//pkg/conversion:go_default_library",
+        "@io_k8s_apimachinery//pkg/fields:go_default_library",
+        "@io_k8s_apimachinery//pkg/labels:go_default_library",
+        "@io_k8s_apimachinery//pkg/selection:go_default_library",
+        "@io_k8s_apimachinery//pkg/types:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
+        "@io_k8s_apimachinery//pkg/watch:go_default_library",
+    ],
+)
+
+go_test(
+    name = "meta_test",
+    srcs = [
+        "controller_ref_test.go",
+        "conversion_test.go",
+        "duration_test.go",
+        "group_version_test.go",
+        "helpers_test.go",
+        "labels_test.go",
+        "micro_time_test.go",
+        "options_test.go",
+        "time_test.go",
+        "types_test.go",
+    ],
+    embed = [":meta"],
+    deps = [
+        ":v1_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@com_github_google_gofuzz//:gofuzz",
+        "@io_k8s_apimachinery//pkg/api/equality:go_default_library",
+        "@io_k8s_apimachinery//pkg/labels:go_default_library",
+        "@io_k8s_apimachinery//pkg/types:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/diff:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/json:go_default_library",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)

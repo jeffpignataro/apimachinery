@@ -1,0 +1,35 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "validation",
+    srcs = [
+        "doc.go",
+        "generic.go",
+        "objectmeta.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/validation",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/api/equality:go_default_library",
+        "@io_k8s_apimachinery//pkg/api/meta:go_default_library",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/validation:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/validation:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/validation/field:go_default_library",
+    ],
+)
+
+go_test(
+    name = "validation_test",
+    srcs = [
+        "generic_test.go",
+        "objectmeta_test.go",
+    ],
+    embed = [":validation"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "@io_k8s_apimachinery//pkg/util/validation/field:go_default_library",
+    ],
+)

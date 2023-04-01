@@ -1,0 +1,40 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "watch",
+    srcs = [
+        "doc.go",
+        "filter.go",
+        "mux.go",
+        "streamwatcher.go",
+        "watch.go",
+        "zz_generated.deepcopy.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/watch",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/util/net:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
+        "@io_k8s_klog_v2//:klog",
+    ],
+)
+
+go_test(
+    name = "watch_test",
+    srcs = [
+        "filter_test.go",
+        "mux_test.go",
+        "streamwatcher_test.go",
+        "watch_test.go",
+    ],
+    embed = [":watch"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@com_github_stretchr_testify//assert",
+        "@io_k8s_apimachinery//pkg/util/wait:go_default_library",
+        "@io_k8s_apimachinery//pkg/watch:go_default_library",
+    ],
+)

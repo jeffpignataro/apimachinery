@@ -1,0 +1,9 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "remotecommand",
+    srcs = ["constants.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/remotecommand",
+    visibility = ["//visibility:public"],
+    deps = ["//pkg/apis/meta/v1:v1_go_proto"],
+)

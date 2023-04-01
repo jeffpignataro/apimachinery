@@ -1,0 +1,50 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "meta",
+    srcs = [
+        "conditions.go",
+        "doc.go",
+        "errors.go",
+        "firsthit_restmapper.go",
+        "help.go",
+        "interfaces.go",
+        "lazy.go",
+        "meta.go",
+        "multirestmapper.go",
+        "priority.go",
+        "restmapper.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/meta",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/conversion:go_default_library",
+        "@io_k8s_apimachinery//pkg/types:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/errors:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+        "@io_k8s_klog_v2//:klog",
+    ],
+)
+
+go_test(
+    name = "meta_test",
+    srcs = [
+        "conditions_test.go",
+        "errors_test.go",
+        "meta_test.go",
+        "multirestmapper_test.go",
+        "priority_test.go",
+        "restmapper_test.go",
+    ],
+    embed = [":meta"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/apis/meta/v1beta1:v1beta1_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@com_github_google_gofuzz//:gofuzz",
+        "@io_k8s_apimachinery//pkg/util/diff:go_default_library",
+    ],
+)

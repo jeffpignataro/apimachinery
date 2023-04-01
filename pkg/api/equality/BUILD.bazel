@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "equality",
+    srcs = ["semantic.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/api/equality",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/api/resource:resource_go_proto",
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "@io_k8s_apimachinery//pkg/conversion:go_default_library",
+        "@io_k8s_apimachinery//pkg/fields:go_default_library",
+        "@io_k8s_apimachinery//pkg/labels:go_default_library",
+    ],
+)

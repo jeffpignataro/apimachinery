@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "yaml",
+    srcs = ["decoder.go"],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/yaml",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@io_k8s_apimachinery//pkg/util/json:go_default_library",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)
+
+go_test(
+    name = "yaml_test",
+    srcs = ["decoder_test.go"],
+    embed = [":yaml"],
+)

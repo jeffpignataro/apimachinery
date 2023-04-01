@@ -1,0 +1,31 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "yaml",
+    srcs = [
+        "meta.go",
+        "yaml.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/yaml",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/util/yaml:go_default_library",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)
+
+go_test(
+    name = "yaml_test",
+    srcs = [
+        "meta_test.go",
+        "yaml_test.go",
+    ],
+    embed = [":yaml"],
+    deps = [
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/util/yaml:go_default_library",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)

@@ -1,0 +1,25 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "waitgroup",
+    srcs = [
+        "doc.go",
+        "ratelimited_waitgroup.go",
+        "waitgroup.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/util/waitgroup",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "waitgroup_test",
+    srcs = [
+        "ratelimited_waitgroup_test.go",
+        "waitgroup_test.go",
+    ],
+    embed = [":waitgroup"],
+    deps = [
+        "@io_k8s_apimachinery//pkg/util/wait:go_default_library",
+        "@org_golang_x_time//rate",
+    ],
+)

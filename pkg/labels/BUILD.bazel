@@ -1,0 +1,37 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "labels",
+    srcs = [
+        "doc.go",
+        "labels.go",
+        "selector.go",
+        "zz_generated.deepcopy.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/labels",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@io_k8s_apimachinery//pkg/selection:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/validation:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/validation/field:go_default_library",
+        "@io_k8s_klog_v2//:klog",
+        "@io_k8s_utils//strings/slices",
+    ],
+)
+
+go_test(
+    name = "labels_test",
+    srcs = [
+        "labels_test.go",
+        "selector_test.go",
+    ],
+    embed = [":labels"],
+    deps = [
+        "@com_github_google_go_cmp//cmp",
+        "@com_github_google_go_cmp//cmp/cmpopts",
+        "@io_k8s_apimachinery//pkg/selection:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/sets:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/validation/field:go_default_library",
+    ],
+)

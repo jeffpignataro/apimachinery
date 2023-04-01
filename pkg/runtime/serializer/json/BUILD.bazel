@@ -1,0 +1,41 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "json",
+    srcs = [
+        "json.go",
+        "meta.go",
+    ],
+    importpath = "github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/json",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/recognizer:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/framer:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/yaml:go_default_library",
+        "@io_k8s_klog_v2//:klog",
+        "@io_k8s_sigs_json//:json",
+        "@io_k8s_sigs_yaml//:yaml",
+    ],
+)
+
+go_test(
+    name = "json_test",
+    srcs = [
+        "json_limit_test.go",
+        "json_test.go",
+        "meta_test.go",
+    ],
+    embed = [":json"],
+    deps = [
+        "//pkg/apis/meta/v1:v1_go_proto",
+        "//pkg/runtime:runtime_go_proto",
+        "//pkg/runtime/schema:schema_go_proto",
+        "@io_k8s_apimachinery//pkg/apis/meta/v1/unstructured:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/serializer/json:go_default_library",
+        "@io_k8s_apimachinery//pkg/runtime/testing:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/diff:go_default_library",
+        "@io_k8s_apimachinery//pkg/util/json:go_default_library",
+    ],
+)
