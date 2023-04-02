@@ -27,7 +27,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/util/validation"
 	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
 	"github.com/jeffpignataro/klog/v2"
-	stringslices "github.com/jeffpignataro/utils/strings/slices"
+	stringslices "k8s.io/utils/strings/slices"
 )
 
 var (

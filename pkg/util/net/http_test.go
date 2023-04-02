@@ -31,8 +31,8 @@ import (
 	"strings"
 	"testing"
 
-	netutils "github.com/jeffpignataro/utils/net"
 	"github.com/stretchr/testify/assert"
+	netutils "k8s.io/utils/net"
 )
 
 func TestGetClientIP(t *testing.T) {

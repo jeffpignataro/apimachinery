@@ -25,7 +25,7 @@ import (
 	"strings"
 
 	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
-	netutils "github.com/jeffpignataro/utils/net"
+	netutils "k8s.io/utils/net"
 )
 
 const qnameCharFmt string = "[A-Za-z0-9]"

@@ -23,7 +23,7 @@ import (
 	"time"
 
 	"github.com/jeffpignataro/apimachinery/pkg/util/runtime"
-	"github.com/jeffpignataro/utils/clock"
+	"k8s.io/utils/clock"
 )
 
 // Backoff holds parameters applied to a Backoff function.

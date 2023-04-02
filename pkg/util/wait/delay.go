@@ -21,7 +21,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jeffpignataro/utils/clock"
+	"k8s.io/utils/clock"
 )
 
 // DelayFunc returns the next time interval to wait.

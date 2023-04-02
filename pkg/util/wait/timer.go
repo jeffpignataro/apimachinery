@@ -19,7 +19,7 @@ package wait
 import (
 	"time"
 
-	"github.com/jeffpignataro/utils/clock"
+	"k8s.io/utils/clock"
 )
 
 // Timer abstracts how wait functions interact with time runtime efficiently. Test
