@@ -1,6 +1,6 @@
 // This is a generated file. Do not edit directly.
 
-module k8s.io/apimachinery
+module github.com/jeffpignataro/apimachinery
 
 go 1.20
 
@@ -22,12 +22,12 @@ require (
 	golang.org/x/net v0.8.0
 	golang.org/x/time v0.0.0-20220210224613-90d013bbcef8
 	gopkg.in/inf.v0 v0.9.1
-	k8s.io/klog/v2 v2.90.1
-	k8s.io/kube-openapi v0.0.0-20230308215209-15aac26d736a
-	k8s.io/utils v0.0.0-20230209194617-a36077c30491
-	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd
-	sigs.k8s.io/structured-merge-diff/v4 v4.2.3
-	sigs.k8s.io/yaml v1.3.0
+	github.com/jeffpignataro/klog/v2 v2.90.1
+	github.com/jeffpignataro/kube-openapi v0.0.0-20230308215209-15aac26d736a
+	github.com/jeffpignataro/utils v0.0.0-20230209194617-a36077c30491
+	sigs.github.com/jeffpignataro/json v0.0.0-20221116044647-bc3834ca7abd
+	sigs.github.com/jeffpignataro/structured-merge-diff/v4 v4.2.3
+	sigs.github.com/jeffpignataro/yaml v1.3.0
 )
 
 require (

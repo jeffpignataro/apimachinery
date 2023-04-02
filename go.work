@@ -1,0 +1,36 @@
+go 1.20
+
+use (
+	.
+	./pkg
+	./pkg/api
+	./pkg/api/errors
+	./pkg/api/meta
+	./pkg/api/validation
+	./pkg/apis
+	./pkg/apis/meta
+	./pkg/apis/meta/internalversion
+	./pkg/apis/meta/internalversion/scheme
+	./pkg/apis/meta/v1
+	./pkg/apis/meta/v1beta1
+	./pkg/apis/testapigroup
+	./pkg/apis/testapigroup/v1
+	./pkg/conversion
+	./pkg/conversion/queryparams
+	./pkg/fields
+	./pkg/labels
+	./pkg/runtime
+	./pkg/runtime/serializer
+	./pkg/runtime/serializer/protobuf
+	./pkg/runtime/testing
+	./pkg/types
+	./pkg/util
+	./pkg/util/errors
+	./pkg/util/httpstream
+	./pkg/util/proxy
+	./pkg/util/version
+	./pkg/util/wait
+	./pkg/util/waitgroup
+	./pkg/version
+	./pkg/watch
+)
