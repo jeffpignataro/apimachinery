@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	utilerrors "k8s.io/apimachinery/pkg/util/errors"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	utilerrors "github.com/jeffpignataro/apimachinery/pkg/util/errors"
 )
 
 var (

@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"testing"
 
-	"k8s.io/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 func TestMultiRESTMapperResourceFor(t *testing.T) {

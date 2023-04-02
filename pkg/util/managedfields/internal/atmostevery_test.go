@@ -20,7 +20,7 @@ import (
 	"testing"
 	"time"
 
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
 )
 
 func TestAtMostEvery(t *testing.T) {

@@ -20,14 +20,14 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"sigs.k8s.io/structured-merge-diff/v4/typed"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/typed"
 
-	"k8s.io/apimachinery/pkg/api/equality"
-	"k8s.io/apimachinery/pkg/api/meta"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime"
-	runtimeschema "k8s.io/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/api/equality"
+	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	runtimeschema "github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 func TestExtractInto(t *testing.T) {

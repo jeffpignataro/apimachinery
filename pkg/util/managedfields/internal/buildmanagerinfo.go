@@ -19,9 +19,9 @@ package internal
 import (
 	"fmt"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 type buildManagerInfoManager struct {

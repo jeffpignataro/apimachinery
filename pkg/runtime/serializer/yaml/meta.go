@@ -19,9 +19,9 @@ package yaml
 import (
 	"fmt"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"sigs.k8s.io/yaml"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"sigs.github.com/jeffpignataro/yaml"
 )
 
 // DefaultMetaFactory is a default factory for versioning objects in JSON or

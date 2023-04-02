@@ -22,8 +22,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
-	"k8s.io/kube-openapi/pkg/validation/spec"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
+	"github.com/jeffpignataro/kube-openapi/pkg/validation/spec"
 )
 
 var fakeTypeConverter = func() internal.TypeConverter {

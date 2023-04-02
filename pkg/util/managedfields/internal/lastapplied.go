@@ -19,9 +19,9 @@ package internal
 import (
 	"fmt"
 
-	"k8s.io/apimachinery/pkg/api/meta"
-	apimachineryvalidation "k8s.io/apimachinery/pkg/api/validation"
-	"k8s.io/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	apimachineryvalidation "github.com/jeffpignataro/apimachinery/pkg/api/validation"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 )
 
 // LastAppliedConfigAnnotation is the annotation used to store the previous

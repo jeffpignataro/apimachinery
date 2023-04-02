@@ -27,9 +27,9 @@ import (
 	"strconv"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/conversion/queryparams"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/klog/v2"
+	"github.com/jeffpignataro/apimachinery/pkg/conversion/queryparams"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/klog/v2"
 )
 
 // codec binds an encoder and decoder.

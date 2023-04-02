@@ -26,8 +26,8 @@ import (
 
 	"strings"
 
-	"k8s.io/klog/v2"
-	netutils "k8s.io/utils/net"
+	"github.com/jeffpignataro/klog/v2"
+	netutils "github.com/jeffpignataro/utils/net"
 )
 
 type AddressFamily uint

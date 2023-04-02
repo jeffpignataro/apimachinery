@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"sync"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 // FullChannelBehavior controls how the Broadcaster reacts if a watcher's watch

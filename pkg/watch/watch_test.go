@@ -20,9 +20,9 @@ import (
 	"reflect"
 	"testing"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	. "k8s.io/apimachinery/pkg/watch"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	. "github.com/jeffpignataro/apimachinery/pkg/watch"
 )
 
 type testType string

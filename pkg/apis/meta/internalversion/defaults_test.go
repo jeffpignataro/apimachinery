@@ -21,10 +21,10 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	apiequality "k8s.io/apimachinery/pkg/api/equality"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/fields"
-	"k8s.io/apimachinery/pkg/labels"
+	apiequality "github.com/jeffpignataro/apimachinery/pkg/api/equality"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/fields"
+	"github.com/jeffpignataro/apimachinery/pkg/labels"
 )
 
 func TestSetListOptionsDefaults(t *testing.T) {

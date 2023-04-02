@@ -22,7 +22,7 @@ import (
 	"sync"
 
 	openapi_v2 "github.com/google/gnostic/openapiv2"
-	openapi "k8s.io/kube-openapi/pkg/util/proto"
+	openapi "github.com/jeffpignataro/kube-openapi/pkg/util/proto"
 )
 
 // Fake opens and returns a openapi swagger from a file Path. It will

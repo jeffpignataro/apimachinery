@@ -22,10 +22,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/gofuzz"
-	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/apimachinery/pkg/types"
-	"k8s.io/apimachinery/pkg/util/diff"
+	fuzz "github.com/google/gofuzz"
+	"github.com/jeffpignataro/apimachinery/pkg/labels"
+	"github.com/jeffpignataro/apimachinery/pkg/types"
+	"github.com/jeffpignataro/apimachinery/pkg/util/diff"
 )
 
 func TestLabelSelectorAsSelector(t *testing.T) {

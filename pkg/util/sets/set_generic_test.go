@@ -20,7 +20,7 @@ import (
 	"reflect"
 	"testing"
 
-	"k8s.io/apimachinery/pkg/util/sets"
+	"github.com/jeffpignataro/apimachinery/pkg/util/sets"
 )
 
 func TestSet(t *testing.T) {

@@ -21,10 +21,10 @@ import (
 	"mime"
 	"os"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	runtimeserializer "k8s.io/apimachinery/pkg/runtime/serializer"
-	"k8s.io/apimachinery/pkg/runtime/serializer/recognizer"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	runtimeserializer "github.com/jeffpignataro/apimachinery/pkg/runtime/serializer"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/recognizer"
 )
 
 var (

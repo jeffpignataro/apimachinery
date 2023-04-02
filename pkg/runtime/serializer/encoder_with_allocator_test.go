@@ -21,11 +21,11 @@ import (
 	"io/ioutil"
 	"testing"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	testapigroupv1 "k8s.io/apimachinery/pkg/apis/testapigroup/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/runtime/serializer/protobuf"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	testapigroupv1 "github.com/jeffpignataro/apimachinery/pkg/apis/testapigroup/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/protobuf"
 )
 
 func BenchmarkProtobufEncoder(b *testing.B) {

@@ -17,18 +17,18 @@ limitations under the License.
 package internalversion
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	metav1beta1 "k8s.io/apimachinery/pkg/apis/meta/v1beta1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	metav1beta1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1beta1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 // GroupName is the group name for this API.
 const GroupName = "meta.k8s.io"
 
 var (
-	// TODO: move SchemeBuilder with zz_generated.deepcopy.go to k8s.io/api.
-	// localSchemeBuilder and AddToScheme will stay in k8s.io/kubernetes.
+	// TODO: move SchemeBuilder with zz_generated.deepcopy.go to github.com/jeffpignataro/api.
+	// localSchemeBuilder and AddToScheme will stay in github.com/jeffpignataro/kubernetes.
 	SchemeBuilder      runtime.SchemeBuilder
 	localSchemeBuilder = &SchemeBuilder
 	AddToScheme        = localSchemeBuilder.AddToScheme

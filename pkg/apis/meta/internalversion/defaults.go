@@ -16,7 +16,7 @@ limitations under the License.
 
 package internalversion
 
-import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+import metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 
 // SetListOptionsDefaults sets defaults on the provided ListOptions if applicable.
 //

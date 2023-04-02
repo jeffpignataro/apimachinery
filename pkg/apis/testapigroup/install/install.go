@@ -19,10 +19,10 @@ limitations under the License.
 package install
 
 import (
-	"k8s.io/apimachinery/pkg/apis/testapigroup"
-	"k8s.io/apimachinery/pkg/apis/testapigroup/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/testapigroup"
+	v1 "github.com/jeffpignataro/apimachinery/pkg/apis/testapigroup/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	utilruntime "github.com/jeffpignataro/apimachinery/pkg/util/runtime"
 )
 
 // Install registers the API group and adds types to a scheme

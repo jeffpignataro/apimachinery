@@ -24,13 +24,13 @@ import (
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
-	"sigs.k8s.io/yaml"
+	"sigs.github.com/jeffpignataro/yaml"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/util/json"
-	"k8s.io/apimachinery/pkg/util/mergepatch"
-	"k8s.io/apimachinery/pkg/util/sets"
-	sptest "k8s.io/apimachinery/pkg/util/strategicpatch/testing"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/util/json"
+	"github.com/jeffpignataro/apimachinery/pkg/util/mergepatch"
+	"github.com/jeffpignataro/apimachinery/pkg/util/sets"
+	sptest "github.com/jeffpignataro/apimachinery/pkg/util/strategicpatch/testing"
 )
 
 var (

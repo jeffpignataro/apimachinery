@@ -26,9 +26,9 @@ import (
 	"testing"
 	"time"
 
-	"k8s.io/apimachinery/pkg/util/runtime"
-	"k8s.io/utils/clock"
-	testingclock "k8s.io/utils/clock/testing"
+	"github.com/jeffpignataro/apimachinery/pkg/util/runtime"
+	"github.com/jeffpignataro/utils/clock"
+	testingclock "github.com/jeffpignataro/utils/clock/testing"
 )
 
 func TestUntil(t *testing.T) {

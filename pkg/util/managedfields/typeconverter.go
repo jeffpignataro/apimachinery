@@ -17,8 +17,8 @@ limitations under the License.
 package managedfields
 
 import (
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
-	"k8s.io/kube-openapi/pkg/validation/spec"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
+	"github.com/jeffpignataro/kube-openapi/pkg/validation/spec"
 )
 
 // TypeConverter allows you to convert from runtime.Object to

@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	apiequality "k8s.io/apimachinery/pkg/api/equality"
-	"k8s.io/apimachinery/pkg/apis/meta/v1"
+	apiequality "github.com/jeffpignataro/apimachinery/pkg/api/equality"
+	v1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 )
 
 func TestMapToLabelSelectorRoundTrip(t *testing.T) {

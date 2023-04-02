@@ -19,12 +19,12 @@ package internal
 import (
 	"fmt"
 
-	"k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/apimachinery/pkg/api/meta"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
-	"sigs.k8s.io/structured-merge-diff/v4/merge"
+	"github.com/jeffpignataro/apimachinery/pkg/api/errors"
+	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
 )
 
 type structuredMergeManager struct {

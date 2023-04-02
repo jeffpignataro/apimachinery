@@ -21,10 +21,10 @@ import (
 	"io/ioutil"
 	"testing"
 
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 	"github.com/stretchr/testify/assert"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
 func buildUnstructuredDecodable(gvk schema.GroupVersionKind) runtime.Object {

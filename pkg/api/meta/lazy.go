@@ -19,7 +19,7 @@ package meta
 import (
 	"sync"
 
-	"k8s.io/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 // lazyObject defers loading the mapper and typer until necessary.

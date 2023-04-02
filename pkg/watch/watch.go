@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"sync"
 
-	"k8s.io/klog/v2"
+	"github.com/jeffpignataro/klog/v2"
 
-	"k8s.io/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 )
 
 // Interface can be implemented by anything that knows how to watch and report changes.

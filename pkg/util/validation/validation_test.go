@@ -20,7 +20,7 @@ import (
 	"strings"
 	"testing"
 
-	"k8s.io/apimachinery/pkg/util/validation/field"
+	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
 )
 
 func TestIsDNS1123Label(t *testing.T) {
@@ -676,15 +676,15 @@ func TestIsDomainPrefixedPath(t *testing.T) {
 		"a/b/c/d",
 		"a.com/foo",
 		"a.b.c.d/foo",
-		"k8s.io/foo/bar",
-		"k8s.io/FOO/BAR",
-		"dev.k8s.io/more/path",
+		"github.com/jeffpignataro/foo/bar",
+		"github.com/jeffpignataro/FOO/BAR",
+		"dev.github.com/jeffpignataro/more/path",
 		"this.is.a.really.long.fqdn/even/longer/path/just/because",
 		"bbc.co.uk/path/goes/here",
 		"10.0.0.1/foo",
-		"hyphens-are-good.k8s.io/and-in-paths-too",
-		strings.Repeat("a", 240) + ".k8s.io/a",
-		"k8s.io/" + strings.Repeat("a", 240),
+		"hyphens-are-good.github.com/jeffpignataro/and-in-paths-too",
+		strings.Repeat("a", 240) + ".github.com/jeffpignataro/a",
+		"github.com/jeffpignataro/" + strings.Repeat("a", 240),
 	}
 	for _, val := range goodValues {
 		if err := IsDomainPrefixedPath(field.NewPath(""), val).ToAggregate(); err != nil {
@@ -705,7 +705,7 @@ func TestIsDomainPrefixedPath(t *testing.T) {
 		"*.example.com",
 		"example.com/foo{}[]@^`",
 		"underscores_are_bad.k8s.io",
-		"underscores_are_bad.k8s.io/foo",
+		"underscores_are_bad.github.com/jeffpignataro/foo",
 		"foo@bar.example.com",
 		"foo@bar.example.com/foo",
 		strings.Repeat("a", 247) + ".k8s.io",

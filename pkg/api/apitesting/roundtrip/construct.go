@@ -23,11 +23,11 @@ import (
 	"strings"
 	"time"
 
-	apimeta "k8s.io/apimachinery/pkg/api/meta"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/intstr"
+	apimeta "github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/intstr"
 )
 
 func defaultFillFuncs() map[reflect.Type]FillFunc {

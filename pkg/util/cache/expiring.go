@@ -21,7 +21,7 @@ import (
 	"sync"
 	"time"
 
-	"k8s.io/utils/clock"
+	"github.com/jeffpignataro/utils/clock"
 )
 
 // NewExpiring returns an initialized expiring cache.

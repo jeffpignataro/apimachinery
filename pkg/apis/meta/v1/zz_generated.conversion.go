@@ -25,13 +25,13 @@ import (
 	url "net/url"
 	unsafe "unsafe"
 
-	resource "k8s.io/apimachinery/pkg/api/resource"
-	conversion "k8s.io/apimachinery/pkg/conversion"
-	fields "k8s.io/apimachinery/pkg/fields"
-	labels "k8s.io/apimachinery/pkg/labels"
-	runtime "k8s.io/apimachinery/pkg/runtime"
-	intstr "k8s.io/apimachinery/pkg/util/intstr"
-	watch "k8s.io/apimachinery/pkg/watch"
+	resource "github.com/jeffpignataro/apimachinery/pkg/api/resource"
+	conversion "github.com/jeffpignataro/apimachinery/pkg/conversion"
+	fields "github.com/jeffpignataro/apimachinery/pkg/fields"
+	labels "github.com/jeffpignataro/apimachinery/pkg/labels"
+	runtime "github.com/jeffpignataro/apimachinery/pkg/runtime"
+	intstr "github.com/jeffpignataro/apimachinery/pkg/util/intstr"
+	watch "github.com/jeffpignataro/apimachinery/pkg/watch"
 )
 
 func init() {

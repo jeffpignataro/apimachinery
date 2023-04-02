@@ -20,8 +20,8 @@ import (
 	"strings"
 	"testing"
 
-	"k8s.io/apimachinery/pkg/util/yaml"
-	sigsyaml "sigs.k8s.io/yaml"
+	"github.com/jeffpignataro/apimachinery/pkg/util/yaml"
+	sigsyaml "sigs.github.com/jeffpignataro/yaml"
 )
 
 type testcase struct {

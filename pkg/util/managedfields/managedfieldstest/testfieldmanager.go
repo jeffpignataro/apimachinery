@@ -17,11 +17,11 @@ limitations under the License.
 package managedfieldstest
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/managedfields"
-	"k8s.io/apimachinery/pkg/util/managedfields/internal/testing"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal/testing"
 )
 
 // TestFieldManager is a FieldManager that can be used in test to

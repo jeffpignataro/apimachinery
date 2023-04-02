@@ -21,12 +21,12 @@ import (
 	"strings"
 	"testing"
 
-	apierrors "k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
-	internaltesting "k8s.io/apimachinery/pkg/util/managedfields/internal/testing"
-	"sigs.k8s.io/yaml"
+	apierrors "github.com/jeffpignataro/apimachinery/pkg/api/errors"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
+	internaltesting "github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal/testing"
+	"sigs.github.com/jeffpignataro/yaml"
 )
 
 func TestNoUpdateBeforeFirstApply(t *testing.T) {

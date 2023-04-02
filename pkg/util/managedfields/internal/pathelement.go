@@ -23,8 +23,8 @@ import (
 	"strconv"
 	"strings"
 
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
-	"sigs.k8s.io/structured-merge-diff/v4/value"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/value"
 )
 
 const (

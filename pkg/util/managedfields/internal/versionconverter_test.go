@@ -24,11 +24,11 @@ import (
 	"reflect"
 	"testing"
 
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/kube-openapi/pkg/validation/spec"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/kube-openapi/pkg/validation/spec"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
 )
 
 var testTypeConverter = func() TypeConverter {

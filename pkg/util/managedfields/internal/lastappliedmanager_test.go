@@ -21,17 +21,17 @@ import (
 	"reflect"
 	"testing"
 
-	apiequality "k8s.io/apimachinery/pkg/api/equality"
-	apierrors "k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
-	"k8s.io/apimachinery/pkg/util/managedfields/managedfieldstest"
-	yamlutil "k8s.io/apimachinery/pkg/util/yaml"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
-	"sigs.k8s.io/structured-merge-diff/v4/merge"
-	"sigs.k8s.io/yaml"
+	apiequality "github.com/jeffpignataro/apimachinery/pkg/api/equality"
+	apierrors "github.com/jeffpignataro/apimachinery/pkg/api/errors"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/managedfieldstest"
+	yamlutil "github.com/jeffpignataro/apimachinery/pkg/util/yaml"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
+	"sigs.github.com/jeffpignataro/yaml"
 )
 
 type testArgs struct {

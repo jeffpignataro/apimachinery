@@ -25,7 +25,7 @@ import (
 
 	"github.com/google/uuid"
 
-	testingclock "k8s.io/utils/clock/testing"
+	testingclock "github.com/jeffpignataro/utils/clock/testing"
 )
 
 func TestExpiringCache(t *testing.T) {

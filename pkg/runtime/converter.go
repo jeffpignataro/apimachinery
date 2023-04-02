@@ -29,12 +29,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"k8s.io/apimachinery/pkg/conversion"
-	"k8s.io/apimachinery/pkg/util/json"
-	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
-	"sigs.k8s.io/structured-merge-diff/v4/value"
+	"github.com/jeffpignataro/apimachinery/pkg/conversion"
+	"github.com/jeffpignataro/apimachinery/pkg/util/json"
+	utilruntime "github.com/jeffpignataro/apimachinery/pkg/util/runtime"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/value"
 
-	"k8s.io/klog/v2"
+	"github.com/jeffpignataro/klog/v2"
 )
 
 // UnstructuredConverter is an interface for converting between interface{}

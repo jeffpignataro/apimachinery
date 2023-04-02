@@ -19,7 +19,7 @@ package v1
 import (
 	"testing"
 
-	"k8s.io/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 type metaObj struct {

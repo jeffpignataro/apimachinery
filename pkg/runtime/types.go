@@ -115,7 +115,7 @@ type RawExtension struct {
 // metadata and field mutatation.
 //
 // +k8s:deepcopy-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 // +protobuf=true
 // +k8s:openapi-gen=true
 type Unknown struct {

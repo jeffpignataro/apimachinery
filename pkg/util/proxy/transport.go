@@ -28,13 +28,13 @@ import (
 	"path"
 	"strings"
 
+	"github.com/jeffpignataro/klog/v2"
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/atom"
-	"k8s.io/klog/v2"
 
-	"k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/apimachinery/pkg/util/net"
-	"k8s.io/apimachinery/pkg/util/sets"
+	"github.com/jeffpignataro/apimachinery/pkg/api/errors"
+	"github.com/jeffpignataro/apimachinery/pkg/util/net"
+	"github.com/jeffpignataro/apimachinery/pkg/util/sets"
 )
 
 // atomsToAttrs states which attributes of which tags require URL substitution.

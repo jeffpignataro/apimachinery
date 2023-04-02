@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"testing"
 
-	utiljson "k8s.io/apimachinery/pkg/util/json"
+	utiljson "github.com/jeffpignataro/apimachinery/pkg/util/json"
 )
 
 type GroupVersionHolder struct {

@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"sort"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
 )
 
 type capManagersManager struct {

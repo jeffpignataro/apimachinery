@@ -24,10 +24,10 @@ import (
 	"reflect"
 	"strings"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/validation/field"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
 )
 
 // StatusError is an error intended for consumption by a REST API server; it can also be
@@ -132,7 +132,7 @@ func FromObject(obj runtime.Object) error {
 		if err := runtime.DefaultUnstructuredConverter.FromUnstructured(t.UnstructuredContent(), &status); err != nil {
 			return err
 		}
-		if status.APIVersion != "v1" && status.APIVersion != "meta.k8s.io/v1" {
+		if status.APIVersion != "v1" && status.APIVersion != "meta.github.com/jeffpignataro/v1" {
 			break
 		}
 		return &StatusError{ErrStatus: status}

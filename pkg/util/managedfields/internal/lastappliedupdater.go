@@ -19,9 +19,9 @@ package internal
 import (
 	"fmt"
 
-	"k8s.io/apimachinery/pkg/api/meta"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 )
 
 type lastAppliedUpdater struct {

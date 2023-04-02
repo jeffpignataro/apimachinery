@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"testing"
 
-	"sigs.k8s.io/yaml"
+	"sigs.github.com/jeffpignataro/yaml"
 )
 
 func TestFromInt(t *testing.T) {

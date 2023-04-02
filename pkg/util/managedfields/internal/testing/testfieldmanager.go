@@ -20,16 +20,16 @@ import (
 	"errors"
 	"fmt"
 
-	"k8s.io/apimachinery/pkg/api/meta"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/managedfields"
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
-	"sigs.k8s.io/structured-merge-diff/v4/merge"
-	"sigs.k8s.io/structured-merge-diff/v4/typed"
+	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/typed"
 )
 
 // NewFakeObjectCreater implements ObjectCreater, it can create empty

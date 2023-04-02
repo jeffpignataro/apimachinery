@@ -17,7 +17,7 @@ limitations under the License.
 package v1
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 )
 
 type (
@@ -27,18 +27,18 @@ type (
 	RestartPolicy     string
 )
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // Carp is a collection of containers, used as either input (create, update) or as output (list, get).
 type Carp struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	// Specification of the desired behavior of the carp.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 	// +optional
 	Spec CarpSpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
 
@@ -46,7 +46,7 @@ type Carp struct {
 	// This data may not be up to date.
 	// Populated by the system.
 	// Read-only.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 	// +optional
 	Status CarpStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
@@ -180,13 +180,13 @@ type CarpSpec struct {
 	SchedulerName string `json:"schedulername,omitempty" protobuf:"bytes,19,opt,name=schedulername"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // CarpList is a list of Carps.
 type CarpList struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard list metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 

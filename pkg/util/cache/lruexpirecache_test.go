@@ -21,7 +21,7 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	testingclock "k8s.io/utils/clock/testing"
+	testingclock "github.com/jeffpignataro/utils/clock/testing"
 )
 
 func expectEntry(t *testing.T, c *LRUExpireCache, key interface{}, value interface{}) {

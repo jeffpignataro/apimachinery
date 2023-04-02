@@ -30,8 +30,8 @@ import (
 	"fmt"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/types"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/types"
 )
 
 // TypeMeta describes an individual object in an API response or request
@@ -44,14 +44,14 @@ type TypeMeta struct {
 	// Servers may infer this from the endpoint the client submits requests to.
 	// Cannot be updated.
 	// In CamelCase.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	Kind string `json:"kind,omitempty" protobuf:"bytes,1,opt,name=kind"`
 
 	// APIVersion defines the versioned schema of this representation of an object.
 	// Servers should convert recognized schemas to the latest internal value, and
 	// may reject unrecognized values.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#resources
 	// +optional
 	APIVersion string `json:"apiVersion,omitempty" protobuf:"bytes,2,opt,name=apiVersion"`
 }
@@ -68,7 +68,7 @@ type ListMeta struct {
 	// Value must be treated as opaque by clients and passed unmodified back to the server.
 	// Populated by the system.
 	// Read-only.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
 	// +optional
 	ResourceVersion string `json:"resourceVersion,omitempty" protobuf:"bytes,2,opt,name=resourceVersion"`
 
@@ -129,7 +129,7 @@ type ObjectMeta struct {
 	// If this field is specified and the generated name exists, the server will return a 409.
 	//
 	// Applied only if Name is not specified.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
 	// +optional
 	GenerateName string `json:"generateName,omitempty" protobuf:"bytes,2,opt,name=generateName"`
 
@@ -156,7 +156,7 @@ type ObjectMeta struct {
 	// Read-only.
 	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
 	// +optional
-	UID types.UID `json:"uid,omitempty" protobuf:"bytes,5,opt,name=uid,casttype=k8s.io/kubernetes/pkg/types.UID"`
+	UID types.UID `json:"uid,omitempty" protobuf:"bytes,5,opt,name=uid,casttype=github.com/jeffpignataro/kubernetes/pkg/types.UID"`
 
 	// An opaque value that represents the internal version of this object that can
 	// be used by clients to determine when objects have changed. May be used for optimistic
@@ -167,7 +167,7 @@ type ObjectMeta struct {
 	// Populated by the system.
 	// Read-only.
 	// Value must be treated as opaque by clients and .
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
 	// +optional
 	ResourceVersion string `json:"resourceVersion,omitempty" protobuf:"bytes,6,opt,name=resourceVersion"`
 
@@ -183,7 +183,7 @@ type ObjectMeta struct {
 	// Populated by the system.
 	// Read-only.
 	// Null for lists.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	CreationTimestamp Time `json:"creationTimestamp,omitempty" protobuf:"bytes,8,opt,name=creationTimestamp"`
 
@@ -204,7 +204,7 @@ type ObjectMeta struct {
 	//
 	// Populated by the system when a graceful deletion is requested.
 	// Read-only.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	DeletionTimestamp *Time `json:"deletionTimestamp,omitempty" protobuf:"bytes,9,opt,name=deletionTimestamp"`
 
@@ -292,14 +292,14 @@ type OwnerReference struct {
 	// API version of the referent.
 	APIVersion string `json:"apiVersion" protobuf:"bytes,5,opt,name=apiVersion"`
 	// Kind of the referent.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	Kind string `json:"kind" protobuf:"bytes,1,opt,name=kind"`
 	// Name of the referent.
 	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
 	Name string `json:"name" protobuf:"bytes,3,opt,name=name"`
 	// UID of the referent.
 	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	UID types.UID `json:"uid" protobuf:"bytes,4,opt,name=uid,casttype=k8s.io/apimachinery/pkg/types.UID"`
+	UID types.UID `json:"uid" protobuf:"bytes,4,opt,name=uid,casttype=github.com/jeffpignataro/apimachinery/pkg/types.UID"`
 	// If true, this reference points to the managing controller.
 	// +optional
 	Controller *bool `json:"controller,omitempty" protobuf:"varint,6,opt,name=controller"`
@@ -316,7 +316,7 @@ type OwnerReference struct {
 }
 
 // +k8s:conversion-gen:explicit-from=net/url.Values
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // ListOptions is the query options to a standard REST list call.
 type ListOptions struct {
@@ -406,7 +406,7 @@ type ListOptions struct {
 	// produce the current state of objects in the collection. Once all such
 	// events have been sent, a synthetic "Bookmark" event  will be sent.
 	// The bookmark will report the ResourceVersion (RV) corresponding to the
-	// set of objects, and be marked with `"k8s.io/initial-events-end": "true"` annotation.
+	// set of objects, and be marked with `"github.com/jeffpignataro/initial-events-end": "true"` annotation.
 	// Afterwards, the watch stream will proceed as usual, sending watch events
 	// corresponding to changes (subsequent to the RV) to objects watched.
 	//
@@ -448,7 +448,7 @@ const (
 )
 
 // +k8s:conversion-gen:explicit-from=net/url.Values
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // GetOptions is the standard query options to the standard REST get call.
 type GetOptions struct {
@@ -488,7 +488,7 @@ const (
 )
 
 // +k8s:conversion-gen:explicit-from=net/url.Values
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // DeleteOptions may be provided when deleting an API object.
 type DeleteOptions struct {
@@ -544,7 +544,7 @@ const (
 )
 
 // +k8s:conversion-gen:explicit-from=net/url.Values
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // CreateOptions may be provided when creating an API object.
 type CreateOptions struct {
@@ -587,7 +587,7 @@ type CreateOptions struct {
 }
 
 // +k8s:conversion-gen:explicit-from=net/url.Values
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // PatchOptions may be provided when patching an API object.
 // PatchOptions is meant to be a superset of UpdateOptions.
@@ -670,7 +670,7 @@ func (o ApplyOptions) ToPatchOptions() PatchOptions {
 }
 
 // +k8s:conversion-gen:explicit-from=net/url.Values
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // UpdateOptions may be provided when updating an API object.
 // All fields in UpdateOptions should also be present in PatchOptions.
@@ -716,25 +716,25 @@ type UpdateOptions struct {
 type Preconditions struct {
 	// Specifies the target UID.
 	// +optional
-	UID *types.UID `json:"uid,omitempty" protobuf:"bytes,1,opt,name=uid,casttype=k8s.io/apimachinery/pkg/types.UID"`
+	UID *types.UID `json:"uid,omitempty" protobuf:"bytes,1,opt,name=uid,casttype=github.com/jeffpignataro/apimachinery/pkg/types.UID"`
 	// Specifies the target ResourceVersion
 	// +optional
 	ResourceVersion *string `json:"resourceVersion,omitempty" protobuf:"bytes,2,opt,name=resourceVersion"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // Status is a return value for calls that don't return other objects.
 type Status struct {
 	TypeMeta `json:",inline"`
 	// Standard list metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	// Status of the operation.
 	// One of: "Success" or "Failure".
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 	// +optional
 	Status string `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`
 	// A human-readable description of the status of this operation.
@@ -773,14 +773,14 @@ type StatusDetails struct {
 	Group string `json:"group,omitempty" protobuf:"bytes,2,opt,name=group"`
 	// The kind attribute of the resource associated with the status StatusReason.
 	// On some operations may differ from the requested resource Kind.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	Kind string `json:"kind,omitempty" protobuf:"bytes,3,opt,name=kind"`
 	// UID of the resource.
 	// (when there is a single resource which can be described).
 	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
 	// +optional
-	UID types.UID `json:"uid,omitempty" protobuf:"bytes,6,opt,name=uid,casttype=k8s.io/apimachinery/pkg/types.UID"`
+	UID types.UID `json:"uid,omitempty" protobuf:"bytes,6,opt,name=uid,casttype=github.com/jeffpignataro/apimachinery/pkg/types.UID"`
 	// The Causes array includes more details associated with the StatusReason
 	// failure. Not all StatusReasons may provide detailed causes.
 	// +optional
@@ -1007,13 +1007,13 @@ const (
 	CauseTypeResourceVersionTooLarge CauseType = "ResourceVersionTooLarge"
 )
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // List holds a list of objects, which may not be known by the server.
 type List struct {
 	TypeMeta `json:",inline"`
 	// Standard list metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -1025,7 +1025,7 @@ type List struct {
 // discover the API at /api, which is the root path of the legacy v1 API.
 //
 // +protobuf.options.(gogoproto.goproto_stringer)=false
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 type APIVersions struct {
 	TypeMeta `json:",inline"`
 	// versions are the api versions that are available.
@@ -1040,7 +1040,7 @@ type APIVersions struct {
 	ServerAddressByClientCIDRs []ServerAddressByClientCIDR `json:"serverAddressByClientCIDRs" protobuf:"bytes,2,rep,name=serverAddressByClientCIDRs"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // APIGroupList is a list of APIGroup, to allow clients to discover the API at
 // /apis.
@@ -1050,7 +1050,7 @@ type APIGroupList struct {
 	Groups []APIGroup `json:"groups" protobuf:"bytes,1,rep,name=groups"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // APIGroup contains the name, the supported versions, and the preferred version
 // of a group.
@@ -1140,7 +1140,7 @@ func (vs Verbs) String() string {
 	return fmt.Sprintf("%v", []string(vs))
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // APIResourceList is a list of APIResource, it is used to expose the name of the
 // resources supported in a specific group and version, and if the resource
@@ -1290,7 +1290,7 @@ const (
 // 'k:<keys>', where <keys> is a map of  a list item's key fields to their unique values
 // If a key maps to an empty Fields value, the field that key represents is part of the set.
 //
-// The exact format is defined in sigs.k8s.io/structured-merge-diff
+// The exact format is defined in sigs.github.com/jeffpignataro/structured-merge-diff
 // +protobuf.options.(gogoproto.goproto_stringer)=false
 type FieldsV1 struct {
 	// Raw is the underlying serialization of this object.
@@ -1308,12 +1308,12 @@ func (f FieldsV1) String() string {
 
 // Table is a tabular representation of a set of API resources. The server transforms the
 // object into a set of preferred columns for quickly reviewing the objects.
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 // +protobuf=false
 type Table struct {
 	TypeMeta `json:",inline"`
 	// Standard list metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	ListMeta `json:"metadata,omitempty"`
 
@@ -1424,7 +1424,7 @@ const (
 
 // TableOptions are used when a Table is requested by the caller.
 // +k8s:conversion-gen:explicit-from=net/url.Values
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 type TableOptions struct {
 	TypeMeta `json:",inline"`
 
@@ -1441,21 +1441,21 @@ type TableOptions struct {
 
 // PartialObjectMetadata is a generic representation of any object with ObjectMeta. It allows clients
 // to get access to a particular ObjectMeta schema without knowing the details of the version.
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 type PartialObjectMetadata struct {
 	TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 }
 
 // PartialObjectMetadataList contains a list of objects containing only their metadata
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 type PartialObjectMetadataList struct {
 	TypeMeta `json:",inline"`
 	// Standard list metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+	// More info: https://git.github.com/jeffpignataro/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 

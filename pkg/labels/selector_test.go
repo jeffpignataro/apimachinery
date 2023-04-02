@@ -24,9 +24,9 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"k8s.io/apimachinery/pkg/selection"
-	"k8s.io/apimachinery/pkg/util/sets"
-	"k8s.io/apimachinery/pkg/util/validation/field"
+	"github.com/jeffpignataro/apimachinery/pkg/selection"
+	"github.com/jeffpignataro/apimachinery/pkg/util/sets"
+	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
 )
 
 var (

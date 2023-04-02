@@ -17,7 +17,7 @@ limitations under the License.
 package v1
 
 import (
-	"k8s.io/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 )
 
 func addConversionFuncs(scheme *runtime.Scheme) error {

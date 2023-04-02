@@ -21,9 +21,9 @@ import (
 	"io"
 	"reflect"
 
-	"k8s.io/apimachinery/pkg/conversion"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/errors"
+	"github.com/jeffpignataro/apimachinery/pkg/conversion"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/errors"
 )
 
 // unsafeObjectConvertor implements ObjectConvertor using the unsafe conversion path.

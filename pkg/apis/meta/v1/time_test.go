@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"sigs.k8s.io/yaml"
+	"sigs.github.com/jeffpignataro/yaml"
 )
 
 type TimeHolder struct {

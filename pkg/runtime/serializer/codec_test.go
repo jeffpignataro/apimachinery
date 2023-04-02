@@ -25,17 +25,17 @@ import (
 	"strings"
 	"testing"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/conversion"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	runtimetesting "k8s.io/apimachinery/pkg/runtime/testing"
-	"k8s.io/apimachinery/pkg/util/diff"
-	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/conversion"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	runtimetesting "github.com/jeffpignataro/apimachinery/pkg/runtime/testing"
+	"github.com/jeffpignataro/apimachinery/pkg/util/diff"
+	utilruntime "github.com/jeffpignataro/apimachinery/pkg/util/runtime"
 
 	fuzz "github.com/google/gofuzz"
 	flag "github.com/spf13/pflag"
-	"sigs.k8s.io/yaml"
+	"sigs.github.com/jeffpignataro/yaml"
 )
 
 var fuzzIters = flag.Int("fuzz-iters", 50, "How many fuzzing iterations to do.")

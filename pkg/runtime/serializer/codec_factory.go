@@ -20,12 +20,12 @@ import (
 	"mime"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/runtime/serializer/json"
-	"k8s.io/apimachinery/pkg/runtime/serializer/protobuf"
-	"k8s.io/apimachinery/pkg/runtime/serializer/recognizer"
-	"k8s.io/apimachinery/pkg/runtime/serializer/versioning"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/json"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/protobuf"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/recognizer"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/serializer/versioning"
 )
 
 // serializerExtensions are for serializers that are conditionally compiled in

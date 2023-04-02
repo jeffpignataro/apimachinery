@@ -31,13 +31,13 @@ import (
 	"strings"
 	"time"
 
-	"k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/apimachinery/pkg/util/httpstream"
-	utilnet "k8s.io/apimachinery/pkg/util/net"
-	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/api/errors"
+	"github.com/jeffpignataro/apimachinery/pkg/util/httpstream"
+	utilnet "github.com/jeffpignataro/apimachinery/pkg/util/net"
+	utilruntime "github.com/jeffpignataro/apimachinery/pkg/util/runtime"
 
+	"github.com/jeffpignataro/klog/v2"
 	"github.com/mxk/go-flowrate/flowrate"
-	"k8s.io/klog/v2"
 )
 
 // UpgradeRequestRoundTripper provides an additional method to decorate a request
@@ -195,7 +195,7 @@ func proxyRedirectsforRootPath(path string, w http.ResponseWriter, req *http.Req
 
 	// From pkg/genericapiserver/endpoints/handlers/proxy.go#ServeHTTP:
 	// Redirect requests with an empty path to a location that ends with a '/'
-	// This is essentially a hack for https://issue.k8s.io/4958.
+	// This is essentially a hack for https://issue.github.com/jeffpignataro/4958.
 	// Note: Keep this code after tryUpgrade to not break that flow.
 	if len(path) == 0 && (method == http.MethodGet || method == http.MethodHead) {
 		var queryPart string

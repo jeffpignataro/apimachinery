@@ -25,8 +25,8 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"k8s.io/utils/clock"
-	testingclock "k8s.io/utils/clock/testing"
+	"github.com/jeffpignataro/utils/clock"
+	testingclock "github.com/jeffpignataro/utils/clock/testing"
 )
 
 func timerWithClock(t Timer, c clock.WithTicker) Timer {

@@ -22,16 +22,16 @@ import (
 
 	fuzz "github.com/google/gofuzz"
 
-	"k8s.io/apimachinery/pkg/api/meta"
-	metafuzzer "k8s.io/apimachinery/pkg/apis/meta/fuzzer"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/apis/testapigroup"
-	"k8s.io/apimachinery/pkg/apis/testapigroup/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/runtime/serializer"
-	"k8s.io/apimachinery/pkg/util/diff"
+	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	metafuzzer "github.com/jeffpignataro/apimachinery/pkg/apis/meta/fuzzer"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/testapigroup"
+	v1 "github.com/jeffpignataro/apimachinery/pkg/apis/testapigroup/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/serializer"
+	"github.com/jeffpignataro/apimachinery/pkg/util/diff"
 )
 
 func TestIsList(t *testing.T) {

@@ -22,13 +22,13 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	smdschema "sigs.k8s.io/structured-merge-diff/v4/schema"
-	"sigs.k8s.io/structured-merge-diff/v4/typed"
-	"sigs.k8s.io/yaml"
+	smdschema "sigs.github.com/jeffpignataro/structured-merge-diff/v4/schema"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/typed"
+	"sigs.github.com/jeffpignataro/yaml"
 
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/kube-openapi/pkg/validation/spec"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/kube-openapi/pkg/validation/spec"
 )
 
 func TestTypeConverter(t *testing.T) {

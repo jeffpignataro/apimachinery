@@ -23,8 +23,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/jeffpignataro/apimachinery/pkg/util/wait"
 	"golang.org/x/time/rate"
-	"k8s.io/apimachinery/pkg/util/wait"
 )
 
 func TestRateLimitedSafeWaitGroup(t *testing.T) {

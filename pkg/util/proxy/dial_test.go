@@ -29,8 +29,8 @@ import (
 	"regexp"
 	"testing"
 
-	"k8s.io/apimachinery/pkg/util/diff"
-	utilnet "k8s.io/apimachinery/pkg/util/net"
+	"github.com/jeffpignataro/apimachinery/pkg/util/diff"
+	utilnet "github.com/jeffpignataro/apimachinery/pkg/util/net"
 )
 
 func TestDialURL(t *testing.T) {

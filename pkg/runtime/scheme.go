@@ -21,11 +21,11 @@ import (
 	"reflect"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/conversion"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/naming"
-	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
-	"k8s.io/apimachinery/pkg/util/sets"
+	"github.com/jeffpignataro/apimachinery/pkg/conversion"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/naming"
+	utilruntime "github.com/jeffpignataro/apimachinery/pkg/util/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/util/sets"
 )
 
 // Scheme defines methods for serializing and deserializing API objects, a type
@@ -703,4 +703,4 @@ func (s *Scheme) Name() string {
 
 // internalPackages are packages that ignored when creating a default reflector name. These packages are in the common
 // call chains to NewReflector, so they'd be low entropy names for reflectors
-var internalPackages = []string{"k8s.io/apimachinery/pkg/runtime/scheme.go"}
+var internalPackages = []string{"github.com/jeffpignataro/apimachinery/pkg/runtime/scheme.go"}

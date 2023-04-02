@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"io"
 
-	kjson "sigs.k8s.io/json"
+	kjson "sigs.github.com/jeffpignataro/json"
 )
 
 // NewEncoder delegates to json.NewEncoder

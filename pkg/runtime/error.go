@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 )
 
 type notRegisteredErr struct {

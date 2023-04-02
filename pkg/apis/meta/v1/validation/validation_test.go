@@ -21,9 +21,9 @@ import (
 	"strings"
 	"testing"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/types"
-	"k8s.io/apimachinery/pkg/util/validation/field"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/types"
+	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
 )
 
 func TestValidateLabels(t *testing.T) {

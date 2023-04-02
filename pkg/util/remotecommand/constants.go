@@ -19,7 +19,7 @@ package remotecommand
 import (
 	"time"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 )
 
 const (
@@ -27,8 +27,8 @@ const (
 
 	// The SPDY subprotocol "channel.k8s.io" is used for remote command
 	// attachment/execution. This represents the initial unversioned subprotocol,
-	// which has the known bugs https://issues.k8s.io/13394 and
-	// https://issues.k8s.io/13395.
+	// which has the known bugs https://issues.github.com/jeffpignataro/13394 and
+	// https://issues.github.com/jeffpignataro/13395.
 	StreamProtocolV1Name = "channel.k8s.io"
 
 	// The SPDY subprotocol "v2.channel.k8s.io" is used for remote command

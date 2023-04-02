@@ -24,9 +24,9 @@ import (
 	"net/http"
 	"net/url"
 
-	utilnet "k8s.io/apimachinery/pkg/util/net"
-	"k8s.io/apimachinery/third_party/forked/golang/netutil"
-	"k8s.io/klog/v2"
+	utilnet "github.com/jeffpignataro/apimachinery/pkg/util/net"
+	"github.com/jeffpignataro/apimachinery/third_party/forked/golang/netutil"
+	"github.com/jeffpignataro/klog/v2"
 )
 
 // dialURL will dial the specified URL using the underlying dialer held by the passed

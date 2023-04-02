@@ -22,9 +22,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/jeffpignataro/apimachinery/pkg/util/httpstream"
+	"github.com/jeffpignataro/klog/v2"
 	"github.com/moby/spdystream"
-	"k8s.io/apimachinery/pkg/util/httpstream"
-	"k8s.io/klog/v2"
 )
 
 // connection maintains state about a spdystream.Connection and its associated

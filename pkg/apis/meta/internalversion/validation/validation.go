@@ -19,9 +19,9 @@ package validation
 import (
 	"fmt"
 
-	"k8s.io/apimachinery/pkg/apis/meta/internalversion"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/util/validation/field"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/internalversion"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
 )
 
 // ValidateListOptions returns all validation errors found while validating the ListOptions.

@@ -22,12 +22,12 @@ import (
 	"strconv"
 	"strings"
 
-	"k8s.io/apimachinery/pkg/selection"
-	"k8s.io/apimachinery/pkg/util/sets"
-	"k8s.io/apimachinery/pkg/util/validation"
-	"k8s.io/apimachinery/pkg/util/validation/field"
-	"k8s.io/klog/v2"
-	stringslices "k8s.io/utils/strings/slices"
+	"github.com/jeffpignataro/apimachinery/pkg/selection"
+	"github.com/jeffpignataro/apimachinery/pkg/util/sets"
+	"github.com/jeffpignataro/apimachinery/pkg/util/validation"
+	"github.com/jeffpignataro/apimachinery/pkg/util/validation/field"
+	"github.com/jeffpignataro/klog/v2"
+	stringslices "github.com/jeffpignataro/utils/strings/slices"
 )
 
 var (

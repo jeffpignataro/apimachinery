@@ -31,8 +31,8 @@ import (
 	"strings"
 	"testing"
 
+	netutils "github.com/jeffpignataro/utils/net"
 	"github.com/stretchr/testify/assert"
-	netutils "k8s.io/utils/net"
 )
 
 func TestGetClientIP(t *testing.T) {
@@ -445,7 +445,7 @@ func TestSourceIPs(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			req, _ := http.NewRequest("GET", "https://cluster.k8s.io/apis/foobars/v1/foo/bar", nil)
+			req, _ := http.NewRequest("GET", "https://cluster.github.com/jeffpignataro/apis/foobars/v1/foo/bar", nil)
 			req.RemoteAddr = test.remoteAddr
 			if test.forwardedFor != "" {
 				req.Header.Set("X-Forwarded-For", test.forwardedFor)

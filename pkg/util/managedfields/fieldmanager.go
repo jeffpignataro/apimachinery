@@ -19,11 +19,11 @@ package managedfields
 import (
 	"fmt"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
 )
 
 // FieldManager updates the managed fields and merges applied

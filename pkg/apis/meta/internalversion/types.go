@@ -17,13 +17,13 @@ limitations under the License.
 package internalversion
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/fields"
-	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/apimachinery/pkg/runtime"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/fields"
+	"github.com/jeffpignataro/apimachinery/pkg/labels"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 )
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // ListOptions is the query options to a standard REST list call.
 type ListOptions struct {
@@ -72,7 +72,7 @@ type ListOptions struct {
 	// produce the current state of objects in the collection. Once all such
 	// events have been sent, a synthetic "Bookmark" event  will be sent.
 	// The bookmark will report the ResourceVersion (RV) corresponding to the
-	// set of objects, and be marked with `"k8s.io/initial-events-end": "true"` annotation.
+	// set of objects, and be marked with `"github.com/jeffpignataro/initial-events-end": "true"` annotation.
 	// Afterwards, the watch stream will proceed as usual, sending watch events
 	// corresponding to changes (subsequent to the RV) to objects watched.
 	//
@@ -93,7 +93,7 @@ type ListOptions struct {
 	SendInitialEvents *bool
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=github.com/jeffpignataro/apimachinery/pkg/runtime.Object
 
 // List holds a list of objects, which may not be known by the server.
 type List struct {

@@ -19,12 +19,12 @@ package managedfields
 import (
 	"fmt"
 
-	"k8s.io/apimachinery/pkg/api/meta"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/util/managedfields/internal"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
+	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
+	"github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1/unstructured"
+	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
+	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
+	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
 )
 
 var (
