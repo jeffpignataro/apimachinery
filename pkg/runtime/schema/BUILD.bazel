@@ -8,13 +8,6 @@ proto_library(
     visibility = ["//visibility:public"],
 )
 
-go_proto_library(
-    name = "schema_go_proto",
-    importpath = "k8s.io/apimachinery/pkg/runtime/schema",
-    proto = ":schema_proto",
-    visibility = ["//visibility:public"],
-)
-
 go_library(
     name = "schema",
     srcs = [
@@ -29,4 +22,11 @@ go_test(
     name = "schema_test",
     srcs = ["group_version_test.go"],
     embed = [":schema"],
+)
+
+go_proto_library(
+    name = "schema_go_proto",
+    importpath = "k8s.io/apimachinery/pkg/runtime/schema",
+    proto = ":schema_proto",
+    visibility = ["//visibility:public"],
 )

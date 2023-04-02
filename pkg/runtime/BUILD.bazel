@@ -8,13 +8,6 @@ proto_library(
     visibility = ["//visibility:public"],
 )
 
-go_proto_library(
-    name = "runtime_go_proto",
-    importpath = "k8s.io/apimachinery/pkg/runtime",
-    proto = ":runtime_proto",
-    visibility = ["//visibility:public"],
-)
-
 go_library(
     name = "runtime",
     srcs = [
@@ -84,4 +77,11 @@ go_test(
         "@io_k8s_apimachinery//pkg/util/json:go_default_library",
         "@io_k8s_apimachinery//pkg/util/runtime:go_default_library",
     ],
+)
+
+go_proto_library(
+    name = "runtime_go_proto",
+    importpath = "k8s.io/apimachinery/pkg/runtime",
+    proto = ":runtime_proto",
+    visibility = ["//visibility:public"],
 )

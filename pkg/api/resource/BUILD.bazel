@@ -8,13 +8,6 @@ proto_library(
     visibility = ["//visibility:public"],
 )
 
-go_proto_library(
-    name = "resource_go_proto",
-    importpath = "k8s.io/apimachinery/pkg/api/resource",
-    proto = ":resource_proto",
-    visibility = ["//visibility:public"],
-)
-
 go_library(
     name = "resource",
     srcs = [
@@ -51,4 +44,11 @@ go_test(
         "@com_github_spf13_pflag//:pflag",
         "@in_gopkg_inf_v0//:inf_v0",
     ],
+)
+
+go_proto_library(
+    name = "resource_go_proto",
+    importpath = "k8s.io/apimachinery/pkg/api/resource",
+    proto = ":resource_proto",
+    visibility = ["//visibility:public"],
 )

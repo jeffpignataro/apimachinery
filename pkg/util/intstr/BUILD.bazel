@@ -8,13 +8,6 @@ proto_library(
     visibility = ["//visibility:public"],
 )
 
-go_proto_library(
-    name = "intstr_go_proto",
-    importpath = "k8s.io/apimachinery/pkg/util/intstr",
-    proto = ":intstr_proto",
-    visibility = ["//visibility:public"],
-)
-
 go_library(
     name = "intstr",
     srcs = [
@@ -34,4 +27,11 @@ go_test(
     srcs = ["intstr_test.go"],
     embed = [":intstr"],
     deps = ["@io_k8s_sigs_yaml//:yaml"],
+)
+
+go_proto_library(
+    name = "intstr_go_proto",
+    importpath = "k8s.io/apimachinery/pkg/util/intstr",
+    proto = ":intstr_proto",
+    visibility = ["//visibility:public"],
 )
