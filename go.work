@@ -12,6 +12,7 @@ use (
 	./pkg/apis/meta/internalversion
 	./pkg/apis/meta/internalversion/scheme
 	./pkg/apis/meta/v1
+	./pkg/apis/meta/v1/unstructured
 	./pkg/apis/meta/v1beta1
 	./pkg/apis/testapigroup
 	./pkg/apis/testapigroup/v1
