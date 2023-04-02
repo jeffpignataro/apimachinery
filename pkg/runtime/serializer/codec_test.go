@@ -35,7 +35,7 @@ import (
 
 	fuzz "github.com/google/gofuzz"
 	flag "github.com/spf13/pflag"
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 )
 
 var fuzzIters = flag.Int("fuzz-iters", 50, "How many fuzzing iterations to do.")

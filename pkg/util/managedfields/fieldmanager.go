@@ -23,7 +23,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
 )
 
 // FieldManager updates the managed fields and merges applied

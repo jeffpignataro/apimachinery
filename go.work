@@ -23,6 +23,7 @@ use (
 	./pkg/runtime/serializer
 	./pkg/runtime/serializer/protobuf
 	./pkg/runtime/testing
+	./pkg/selection
 	./pkg/types
 	./pkg/util
 	./pkg/util/errors

@@ -32,7 +32,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/conversion"
 	"github.com/jeffpignataro/apimachinery/pkg/util/json"
 	utilruntime "github.com/jeffpignataro/apimachinery/pkg/util/runtime"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/value"
+	"sigs.k8s.io/structured-merge-diff/v4/value"
 
 	"github.com/jeffpignataro/klog/v2"
 )

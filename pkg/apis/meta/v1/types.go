@@ -1290,7 +1290,7 @@ const (
 // 'k:<keys>', where <keys> is a map of  a list item's key fields to their unique values
 // If a key maps to an empty Fields value, the field that key represents is part of the set.
 //
-// The exact format is defined in sigs.github.com/jeffpignataro/structured-merge-diff
+// The exact format is defined in sigs.k8s.io/structured-merge-diff
 // +protobuf.options.(gogoproto.goproto_stringer)=false
 type FieldsV1 struct {
 	// Raw is the underlying serialization of this object.

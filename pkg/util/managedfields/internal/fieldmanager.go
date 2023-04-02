@@ -26,7 +26,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 	"github.com/jeffpignataro/klog/v2"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
+	"sigs.k8s.io/structured-merge-diff/v4/merge"
 )
 
 // DefaultMaxUpdateManagers defines the default maximum retained number of managedFields entries from updates

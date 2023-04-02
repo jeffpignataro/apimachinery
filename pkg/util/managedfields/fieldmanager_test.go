@@ -38,7 +38,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/managedfieldstest"
 	yamlutil "github.com/jeffpignataro/apimachinery/pkg/util/yaml"
 	"github.com/jeffpignataro/kube-openapi/pkg/validation/spec"
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 )
 
 var fakeTypeConverter = func() managedfields.TypeConverter {

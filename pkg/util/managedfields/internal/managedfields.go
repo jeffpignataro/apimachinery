@@ -24,7 +24,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
 	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
 )
 
 // ManagedInterface groups a fieldpath.ManagedFields together with the timestamps associated with each operation.
@@ -94,7 +94,7 @@ func EncodeObjectManagedFields(obj runtime.Object, managed ManagedInterface) err
 }
 
 // DecodeManagedFields converts ManagedFields from the wire format (api format)
-// to the format used by sigs.github.com/jeffpignataro/structured-merge-diff
+// to the format used by sigs.k8s.io/structured-merge-diff
 func DecodeManagedFields(encodedManagedFields []metav1.ManagedFieldsEntry) (ManagedInterface, error) {
 	managed := managedStruct{}
 	managed.fields = make(fieldpath.ManagedFields, len(encodedManagedFields))
@@ -171,7 +171,7 @@ func decodeVersionedSet(encodedVersionedSet *metav1.ManagedFieldsEntry) (version
 }
 
 // encodeManagedFields converts ManagedFields from the format used by
-// sigs.github.com/jeffpignataro/structured-merge-diff to the wire format (api format)
+// sigs.k8s.io/structured-merge-diff to the wire format (api format)
 func encodeManagedFields(managed ManagedInterface) (encodedManagedFields []metav1.ManagedFieldsEntry, err error) {
 	if len(managed.Fields()) == 0 {
 		return nil, nil

@@ -29,9 +29,9 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/managedfieldstest"
 	yamlutil "github.com/jeffpignataro/apimachinery/pkg/util/yaml"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/merge"
+	"sigs.k8s.io/yaml"
 )
 
 type testArgs struct {

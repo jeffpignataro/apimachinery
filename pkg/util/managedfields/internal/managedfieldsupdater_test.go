@@ -30,7 +30,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 )
 
 func TestManagedFieldsUpdateDoesModifyTime(t *testing.T) {

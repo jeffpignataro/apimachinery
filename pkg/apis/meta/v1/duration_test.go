@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"sigs.github.com/jeffpignataro/yaml"
+	"gopkg.in/yaml.v3"
 )
 
 type DurationHolder struct {

@@ -21,8 +21,8 @@ import (
 	"io"
 	"strconv"
 
-	kjson "sigs.github.com/jeffpignataro/json"
-	"sigs.github.com/jeffpignataro/yaml"
+	kjson "sigs.k8s.io/json"
+	"sigs.k8s.io/yaml"
 
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"

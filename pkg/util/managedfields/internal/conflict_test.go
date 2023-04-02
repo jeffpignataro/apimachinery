@@ -24,8 +24,8 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/api/errors"
 	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/merge"
 )
 
 // TestNewConflictError tests that NewConflictError creates the correct StatusError for a given smd Conflicts

@@ -21,7 +21,7 @@ import (
 	"testing"
 
 	"github.com/jeffpignataro/apimachinery/pkg/util/yaml"
-	sigsyaml "sigs.github.com/jeffpignataro/yaml"
+	sigsyaml "sigs.k8s.io/yaml"
 )
 
 type testcase struct {

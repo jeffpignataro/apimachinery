@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/typed"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/typed"
 
 	"github.com/jeffpignataro/apimachinery/pkg/api/meta"
 	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"

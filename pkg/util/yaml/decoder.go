@@ -27,7 +27,7 @@ import (
 
 	jsonutil "github.com/jeffpignataro/apimachinery/pkg/util/json"
 
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 )
 
 // Unmarshal unmarshals the given data

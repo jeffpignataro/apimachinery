@@ -26,7 +26,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
 	internaltesting "github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal/testing"
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 )
 
 func TestNoUpdateBeforeFirstApply(t *testing.T) {

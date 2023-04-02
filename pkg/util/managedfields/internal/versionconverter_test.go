@@ -28,7 +28,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 	"github.com/jeffpignataro/kube-openapi/pkg/validation/spec"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
 )
 
 var testTypeConverter = func() TypeConverter {

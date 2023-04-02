@@ -32,7 +32,7 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
 	internaltesting "github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal/testing"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/managedfieldstest"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
 )
 
 type fakeManager struct{}

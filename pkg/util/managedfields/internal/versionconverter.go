@@ -21,13 +21,13 @@ import (
 
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/typed"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/merge"
+	"sigs.k8s.io/structured-merge-diff/v4/typed"
 )
 
 // versionConverter is an implementation of
-// sigs.github.com/jeffpignataro/structured-merge-diff/merge.Converter
+// sigs.k8s.io/structured-merge-diff/merge.Converter
 type versionConverter struct {
 	typeConverter   TypeConverter
 	objectConvertor runtime.ObjectConvertor
@@ -61,7 +61,7 @@ func newCRDVersionConverter(t TypeConverter, o runtime.ObjectConvertor, h schema
 	}
 }
 
-// Convert implements sigs.github.com/jeffpignataro/structured-merge-diff/merge.Converter
+// Convert implements sigs.k8s.io/structured-merge-diff/merge.Converter
 func (v *versionConverter) Convert(object *typed.TypedValue, version fieldpath.APIVersion) (*typed.TypedValue, error) {
 	// Convert the smd typed value to a kubernetes object.
 	objectToConvert, err := v.typeConverter.TypedToObject(object)

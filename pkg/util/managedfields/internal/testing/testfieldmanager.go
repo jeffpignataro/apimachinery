@@ -27,9 +27,9 @@ import (
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields"
 	"github.com/jeffpignataro/apimachinery/pkg/util/managedfields/internal"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/merge"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/typed"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/merge"
+	"sigs.k8s.io/structured-merge-diff/v4/typed"
 )
 
 // NewFakeObjectCreater implements ObjectCreater, it can create empty

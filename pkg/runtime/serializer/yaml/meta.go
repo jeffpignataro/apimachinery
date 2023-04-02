@@ -21,7 +21,7 @@ import (
 
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 )
 
 // DefaultMetaFactory is a default factory for versioning objects in JSON or

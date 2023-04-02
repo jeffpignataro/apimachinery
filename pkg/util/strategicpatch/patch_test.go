@@ -24,7 +24,7 @@ import (
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 
 	"github.com/jeffpignataro/apimachinery/pkg/runtime"
 	"github.com/jeffpignataro/apimachinery/pkg/util/json"

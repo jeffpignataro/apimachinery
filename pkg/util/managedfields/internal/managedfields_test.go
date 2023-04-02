@@ -24,7 +24,7 @@ import (
 
 	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 
-	"sigs.github.com/jeffpignataro/yaml"
+	"sigs.k8s.io/yaml"
 )
 
 // TestHasFieldsType makes sure that we fail if we don't have a
@@ -151,7 +151,7 @@ func TestHasOperation(t *testing.T) {
 }
 
 // TestRoundTripManagedFields will roundtrip ManagedFields from the wire format
-// (api format) to the format used by sigs.github.com/jeffpignataro/structured-merge-diff and back
+// (api format) to the format used by sigs.k8s.io/structured-merge-diff and back
 func TestRoundTripManagedFields(t *testing.T) {
 	tests := []string{
 		`null

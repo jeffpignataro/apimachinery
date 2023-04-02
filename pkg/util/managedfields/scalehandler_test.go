@@ -23,7 +23,7 @@ import (
 
 	metav1 "github.com/jeffpignataro/apimachinery/pkg/apis/meta/v1"
 	"github.com/jeffpignataro/apimachinery/pkg/runtime/schema"
-	"sigs.github.com/jeffpignataro/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
 )
 
 func TestTransformManagedFieldsToSubresource(t *testing.T) {
